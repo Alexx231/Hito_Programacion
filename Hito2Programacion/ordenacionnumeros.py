@@ -3,7 +3,7 @@ import random
 
 numeros_desordenados = []
 
-numeros_ordenados = []
+
 
 def generarnumeros():
     try:
@@ -18,10 +18,3 @@ def generarnumeros():
         print("La lista no ha podido ser generada")
     return numeros_desordenados
 
-def listaordenada():
-    try:
-        with open("listaordenada.txt", "w") as archivo:
-            archivo.write(str(numeros_ordenados))
-    except FileNotFoundError:
-        print("La lista ordenada no pudo ser guardada")
-    return numeros_ordenados

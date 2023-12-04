@@ -16,3 +16,13 @@ def shellSort(numeros_desordenados):
         intervalo //= 2
 
     return numeros_desordenados
+
+numeros_ordenados = []
+
+def listaordenada():
+    try:
+        with open("listaordenada.txt", "w") as archivo:
+            archivo.write(str(numeros_ordenados))
+    except FileNotFoundError:
+        print("La lista ordenada no pudo ser guardada")
+    return numeros_ordenados
