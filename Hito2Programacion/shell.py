@@ -18,3 +18,12 @@ def shell_sort(vector):
             paso += 1
         gap //= 2
     return vector
+
+def listaordenada_shell(vector):
+    try:
+        with open("listaordenada_shell.txt", "w") as archivo:
+                archivo.write(str(vector))
+        print("Archivo creado correctamente")
+    except FileNotFoundError:
+        print("No se ha podido crear el archivo")
+    return vector

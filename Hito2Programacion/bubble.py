@@ -13,3 +13,12 @@ def bubble_sort(vector):
                 print(f"Paso {paso} de la ordenación: {vector}")
                 paso += 1
     return vector
+
+def listaordenada_bubble(vector):
+    try:
+        with open("listaordenada_bubble.txt", "w") as archivo:
+                archivo.write(str(vector))
+        print("Archivo creado correctamente")
+    except FileNotFoundError:
+        print("No se ha podido crear el archivo")
+    return vector

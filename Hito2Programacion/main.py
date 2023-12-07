@@ -1,6 +1,6 @@
-from ordenacionnumeros import generar_vector
-from bubble import bubble_sort
-from shell import shell_sort
+from ordenacionnumeros import *
+from bubble import *
+from shell import *
 
 def menu():
     print("BIENVENIDO AL PROGRAMA DE ORDENACIÓN DE NÚMEROS\n")
@@ -17,12 +17,15 @@ while True:
     
     if opcion == 1:
         vector = generar_vector()
+        listadesordenada(vector)
         print(f"\nVector generado: {vector}\n")
     elif opcion == 2:
         vector = bubble_sort(vector)
+        listaordenada_bubble(vector)
         print(f"\nVector después de la ordenación Bubble Sort: {vector}\n")
     elif opcion == 3:
         vector = shell_sort(vector)
+        listaordenada_shell(vector)
         print(f"\nVector después de la ordenación Shell Sort: {vector}\n")
     elif opcion == 4:
         print("\nGracias por usar el programa\n")

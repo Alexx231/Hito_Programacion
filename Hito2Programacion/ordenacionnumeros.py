@@ -12,6 +12,10 @@ def generar_vector():
     return vector
 
 def listadesordenada(vector):
-    with open("listadesordenada.txt", "w") as archivo:
-        for numero in vector:
-            archivo.write(str(numero))
+    try:
+        with open("listadesordenada.txt", "w") as archivo:
+                archivo.write(str(vector))
+        print("Archivo creado correctamente")
+    except FileNotFoundError:
+        print("No se ha podido crear el archivo")
+    return vector
