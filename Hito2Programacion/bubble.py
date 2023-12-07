@@ -16,7 +16,7 @@ def bubbleSort(vector):
 
 def listaordenada(vector):
     try:
-        with open("listaordenada.txt", "w") as archivo:
+        with open("listaordenadabubble.txt", "a") as archivo:
             archivo.write(str(bubbleSort(vector)))
         print(f"La lista ordenada por el metodo bubble es:{bubbleSort(vector)}")
     except FileNotFoundError:

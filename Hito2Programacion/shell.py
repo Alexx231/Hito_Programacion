@@ -3,30 +3,34 @@ los distintos pasos que realiza el algoritmo. Mostrar el vector antes de la orde
 
 from ordenacionnumeros import *
 
-def shellSort(vector):
-    gap = len(vector) // 2
-    while gap > 0:
-        for i in range(gap, len(vector)):
-            aux = vector[i]
-            j = i
-            while j >= gap and vector[j-gap] > aux:
-                vector[j] = vector[j-gap]
-                j -= gap
-            vector[j] = aux
-        print(vector)
-        gap //= 2
-    return vector
-
-def listaordenada(vector):
+def shellSort(numeros):
     try:
-        with open("listaordenada.txt", "w") as archivo:
-            archivo.write(str(shellSort(vector)))
-        print(f"La lista ordenada por el metodo shell es:{shellSort(vector)}")
+        n = len(numeros)
+        intervalo = n // 2
+        while intervalo > 0:
+            for i in range(intervalo, n):
+                temp = numeros[i]
+                j = i
+                while j >= intervalo and numeros[j - intervalo] > temp:
+                    numeros[j] = numeros[j - intervalo]
+                    j -= intervalo
+                numeros[j] = temp
+            intervalo //= 2
+        print(numeros)
+    except FileNotFoundError:
+        print("Error")
+    return numeros
+
+def listaordenada(numeros):
+    try:
+        with open("listaordenadashell.txt", "a") as archivo:
+            archivo.write(str(shellSort(numeros)))
+        print(f"La lista ordenada por el metodo shell es:{shellSort(numeros)}")
     except FileNotFoundError:
         print("No se ha podido guardar el vector en el archivo")
 
-vector = generarVector()
-print(vector)
-vector = shellSort(vector)
-print(vector)
-listaordenada(vector)
+numeros = generarnumerosdesordenados()
+print(numeros)
+numeros_ordenados = shellSort(numeros)
+print(numeros_ordenados)
+listaordenada(numeros_ordenados)
