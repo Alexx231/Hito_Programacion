@@ -1,9 +1,8 @@
-"""Generar de forma aleatoria un vector de 10 elementos enteros, los números aleatorios
-serán del 1 al 10 y se tiene que controlar que los números no se repitan."""
+
 
 import random
 
-def generar_vector():
+def generarnumeros():
     vector = []
     while len(vector) < 10:
         numero = random.randint(1, 10)

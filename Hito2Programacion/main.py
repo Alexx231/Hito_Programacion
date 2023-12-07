@@ -16,7 +16,7 @@ while True:
     opcion = menu()
     
     if opcion == 1:
-        vector = generar_vector()
+        vector = generarnumeros()
         listadesordenada(vector)
         print(f"\nVector generado: {vector}\n")
     elif opcion == 2:
