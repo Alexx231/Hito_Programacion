@@ -1,44 +1,32 @@
-import random
+from ordenacionnumeros import generar_vector
+from bubble import bubble_sort
+from shell import shell_sort
 
-def generar_vector():
-    vector = []
-    while len(vector) < 10:
-        numero = random.randint(1, 10)
-        if numero not in vector:
-            vector.append(numero)
-    return vector
+def menu():
+    print("BIENVENIDO AL PROGRAMA DE ORDENACIÓN DE NÚMEROS\n")
+    print("1. Generar vector")
+    print("2. Ordenación por el método Bubble Sort")
+    print("3. Ordenación por el método Shell Sort")
+    print("4. Salir")
+    opcion = int(input("Introduce una opción: "))
+    return opcion
 
-def bubble_sort(vector):
-    n = len(vector)
-    for i in range(n):
-        for j in range(0, n - i - 1):
-            if vector[j] > vector[j + 1]:
-                vector[j], vector[j + 1] = vector[j + 1], vector[j]
-                print(f"Paso a paso de la ordenación por el metodo bubble: {vector}")
-    return vector
 
-def shell_sort(vector):
-    gap = len(vector) // 2
-    while gap > 0:
-        for i in range(gap, len(vector)):
-            temp = vector[i]
-            j = i
-            while j >= gap and vector[j - gap] > temp:
-                vector[j] = vector[j - gap]
-                j -= gap
-            vector[j] = temp
-            print(f"Paso a paso de la ordenación por el metodo shell: {vector}")
-        gap //= 2
-    return vector
-
-def main():
-    vector = generar_vector()
-    print(f"Vector antes de la ordenación: {vector}")
-    vector = bubble_sort(vector)
-    print(f"Vector después de la ordenación Bubble Sort: {vector}")
-    vector = generar_vector()
-    print(f"Vector antes de la ordenación: {vector}")
-    vector = shell_sort(vector)
-    print(f"Vector después de la ordenación Shell Sort: {vector}")
-
-main()
+while True:
+    opcion = menu()
+    
+    if opcion == 1:
+        vector = generar_vector()
+        print(f"\nVector generado: {vector}\n")
+    elif opcion == 2:
+        vector = bubble_sort(vector)
+        print(f"\nVector después de la ordenación Bubble Sort: {vector}\n")
+    elif opcion == 3:
+        vector = shell_sort(vector)
+        print(f"\nVector después de la ordenación Shell Sort: {vector}\n")
+    elif opcion == 4:
+        print("\nGracias por usar el programa\n")
+        break
+    else:
+        print("Opción incorrecta")
+        

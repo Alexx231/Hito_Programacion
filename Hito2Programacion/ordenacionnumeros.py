@@ -10,3 +10,8 @@ def generar_vector():
         if numero not in vector:
             vector.append(numero)
     return vector
+
+def listadesordenada(vector):
+    with open("listadesordenada.txt", "w") as archivo:
+        for numero in vector:
+            archivo.write(str(numero))

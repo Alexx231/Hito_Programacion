@@ -5,9 +5,11 @@ from ordenacionnumeros import *
 
 def bubble_sort(vector):
     n = len(vector)
+    paso = 1
     for i in range(n):
         for j in range(0, n - i - 1):
             if vector[j] > vector[j + 1]:
                 vector[j], vector[j + 1] = vector[j + 1], vector[j]
-                print(f"Paso a paso de la ordenación por el metodo bubble: {vector}")
+                print(f"Paso {paso} de la ordenación: {vector}")
+                paso += 1
     return vector

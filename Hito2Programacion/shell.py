@@ -5,6 +5,7 @@ from ordenacionnumeros import *
 
 def shell_sort(vector):
     gap = len(vector) // 2
+    paso = 1
     while gap > 0:
         for i in range(gap, len(vector)):
             temp = vector[i]
@@ -13,6 +14,7 @@ def shell_sort(vector):
                 vector[j] = vector[j - gap]
                 j -= gap
             vector[j] = temp
-            print(f"Paso a paso de la ordenación por el metodo shell: {vector}")
+            print(f"Paso {paso} de la ordenación: {vector}")
+            paso += 1
         gap //= 2
     return vector
