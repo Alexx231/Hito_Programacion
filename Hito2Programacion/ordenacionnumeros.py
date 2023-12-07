@@ -1,20 +1,23 @@
+""" Generar de forma aleatoria un vector de 10 elementos enteros, los números aleatorios
+serán del 1 al 10 y se tiene que controlar que los números no se repitan. """
 
 import random
 
-numeros_desordenados = []
+def generarVector():
+    vector = []
+    for i in range(10):
+        num = random.randint(1, 10)
+        while num in vector:
+            num = random.randint(1, 10)
+        vector.append(num)
+    return vector
 
-
-
-def generarnumeros():
+def listadesordenada(vector):
     try:
-        while len(numeros_desordenados) < 10:
-            numero = random.randint(1, 10)
-            if numero not in numeros_desordenados:
-                numeros_desordenados.append(numero)
         with open("listadesordenada.txt", "w") as archivo:
-            archivo.write(str(numeros_desordenados))
-        print(f"La lista aleatoria es : {numeros_desordenados}")
+            archivo.write(str(vector))
     except FileNotFoundError:
-        print("La lista no ha podido ser generada")
-    return numeros_desordenados
+        print("No se ha podido guardar el vector en el archivo")
 
+vector = generarVector()
+listadesordenada(vector)

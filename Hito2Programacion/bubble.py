@@ -1,20 +1,29 @@
+""" Aplicar el algoritmo de ordenación de Bubblesort: se debe mostrar información por pantalla para indicar
+los distintos pasos que realiza el algoritmo. Mostrar el vector antes de la ordenación. y después de la ordenación. Imprimir el vector ordenado en una lista llamada listaordenada"""
+
 from ordenacionnumeros import *
 
-numeros_ordenados = []
+def bubbleSort(vector):
+    try:
+        for i in range(len(vector)):
+            for j in range(len(vector)-i-1):
+                if vector[j] > vector[j+1]:
+                    vector[j], vector[j+1] = vector[j+1], vector[j]
+            print(vector)
+    except FileNotFoundError:
+        print("Error")
+    return vector
 
-def bubbleSort(numeros_desordenados):
-    n = len(numeros_desordenados)
-    for i in range(n):
-        for j in range(0, n-i-1):
-            if numeros_desordenados[j] > numeros_desordenados[j+1] :
-                numeros_desordenados[j], numeros_desordenados[j+1] = numeros_desordenados[j+1], numeros_desordenados[j]
-                print(f"La lista ordenada por el metodo Bubble: {numeros_desordenados}")
-    return numeros_desordenados
-
-def listaordenada():
+def listaordenada(vector):
     try:
         with open("listaordenada.txt", "w") as archivo:
-            archivo.write(str(numeros_ordenados))
+            archivo.write(str(bubbleSort(vector)))
+        print(f"La lista ordenada por el metodo bubble es:{bubbleSort(vector)}")
     except FileNotFoundError:
-        print("La lista ordenada no pudo ser guardada")
-    return numeros_ordenados
+        print("No se ha podido guardar el vector en el archivo")
+
+vector = generarVector()
+print(vector)
+vector = bubbleSort(vector)
+print(vector)
+listaordenada(vector)
