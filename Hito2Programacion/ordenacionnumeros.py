@@ -37,7 +37,6 @@ def listadesordenada(vector): #El sistema define la función listadesordenada co
     try: #Intenta hacer lo siguiente:
         with open("listadesordenada.txt", "w") as archivo: #Abre un archivo llamado "listadesordenada.txt" en modo de escritura.
                 archivo.write(str(vector)) #Escribe el vector en el archivo.
-        print("Archivo creado correctamente") #Imprime un mensaje indicando que el archivo se creó correctamente.
     except FileNotFoundError: #Si no puede crear el archivo, realiza lo siguiente:
         print("No se ha podido crear el archivo") #Imprime un mensaje de error.
     return vector #Devuelve el vector.
