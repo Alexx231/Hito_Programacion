@@ -1,25 +1,3 @@
-""" 
-El sistema importa el módulo random para poder generar números aleatorios.
-
-El sistema define la función generar_vector:
-
-Inicializa un vector vacío.
-Mientras la longitud del vector sea menor que 10, realiza lo siguiente:
-Genera un número aleatorio entre 1 y 10.
-Si el número no está en el vector, lo agrega al vector.
-Devuelve el vector.
-El sistema define la función listadesordenada:
-
-Toma un vector como entrada.
-Intenta hacer lo siguiente:
-Abre un archivo llamado "listadesordenada.txt" en modo de escritura.
-Escribe el vector en el archivo.
-Cierra el archivo.
-Imprime un mensaje indicando que el archivo se creó correctamente.
-Si ocurre un error FileNotFoundError, imprime un mensaje indicando que no se pudo crear el archivo.
-Devuelve el vector.
-"""
-
 import random #El sistema importa el módulo random para poder generar números aleatorios.
 
 def generarnumeros(): #El sistema define la función generar_vector.

@@ -1,25 +1,3 @@
-""" 
-El sistema importa todas las funciones y variables del módulo ordenacionnumeros.
-
-El sistema define la función bubble_sort:
-
-Obtiene la longitud del vector.
-Para cada elemento en el vector:
-Para cada elemento restante en el vector, excluyendo el último elemento ya ordenado:
-Si el elemento actual es mayor que el siguiente, los intercambia.
-Imprime el paso actual de la ordenación y el estado actual del vector.
-Devuelve el vector ordenado.
-El sistema define la función listaordenada_bubble:
-
-Intenta hacer lo siguiente:
-Abre un archivo llamado "listaordenada_bubble.txt" en modo de escritura.
-Escribe el vector en el archivo.
-Cierra el archivo.
-Imprime un mensaje indicando que el archivo se creó correctamente.
-Si no puede crear el archivo, imprime un mensaje de error.
-Devuelve el vector. 
-"""
-
 from ordenacionnumeros import * #El sistema importa todas las funciones y variables del módulo ordenacionnumeros.
 
 def bubble_sort(vector): #El sistema define la función bubble_sort con el parámetro vector.
@@ -30,7 +8,7 @@ def bubble_sort(vector): #El sistema define la función bubble_sort con el pará
             for j in range(0, n - i - 1): #Para cada elemento restante en el vector, excluyendo el último elemento ya ordenado:
                 if vector[j] > vector[j + 1]: #Si el elemento actual es mayor que el siguiente, realiza lo siguiente:
                     vector[j], vector[j + 1] = vector[j + 1], vector[j] #Intercambia los elementos.
-                    print(f"Paso {paso} de la ordenación: {vector}") #Imprime el paso actual de la ordenación y el estado actual del vector.
+                    print(f"Paso {paso} de la ordenación por Bubble: {vector}") #Imprime el paso actual de la ordenación y el estado actual del vector.
                     paso += 1 #Incrementa la variable paso en 1.
     except ValueError: #Si ocurre un error ValueError, realiza lo siguiente:
         print("El vector no puede ser ordenado por el metodo de Bubble Sort") #Imprime un mensaje de error.
@@ -40,7 +18,6 @@ def listaordenada_bubble(vector): #El sistema define la función listaordenada_b
     try: #Intenta hacer lo siguiente:
         with open("listaordenada_bubble.txt", "w") as archivo: #Abre un archivo llamado "listaordenada_bubble.txt" en modo de escritura.
                 archivo.write(str(vector)) #Escribe el vector en el archivo.
-        print("Archivo creado correctamente") #Imprime un mensaje indicando que el archivo se creó correctamente.
     except FileNotFoundError: #Si no puede crear el archivo, realiza lo siguiente:
         print("No se ha podido crear el archivo") #Imprime un mensaje de error.
     return vector #Devuelve el vector.

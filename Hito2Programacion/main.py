@@ -1,38 +1,3 @@
-""" 
-El sistema importa todas las funciones y variables de los módulos ordenacionnumeros, bubble y shell.
-
-El sistema define la función menu:
-
-Imprime un menú de opciones.
-Solicita al usuario que introduzca una opción.
-Devuelve la opción seleccionada por el usuario.
-El sistema entra en un bucle infinito:
-
-Llama a la función menu y guarda la opción seleccionada.
-Si la opción es 1:
-Genera un vector de números.
-Guarda el vector desordenado en un archivo.
-Imprime el vector generado.
-Si la opción es 2:
-Ordena el vector utilizando el método Bubble Sort.
-Guarda el vector ordenado en un archivo.
-Imprime el vector después de la ordenación.
-Si la opción es 3:
-Ordena el vector utilizando el método Shell Sort.
-Guarda el vector ordenado en un archivo.
-Imprime el vector después de la ordenación.
-Si la opción es 4:
-Imprime un mensaje de agradecimiento.
-Termina el bucle.
-Si la opción no es ninguna de las anteriores, imprime un mensaje de error. 
-"""
-
-"""        
-Para que el programa funcione correctamente, 
-es necesario cada vez que se realice una ordenacion con su metodo correspondiente, 
-volver a generar el vector de numeros, ya que si no, 
-el programa ordenada los vectores que ya estan ordenados, y no los desordenados. 
-"""
 #El sistema importa todas las funciones y variables de los módulos ordenacionnumeros, bubble y shell.
 from ordenacionnumeros import * 
 from bubble import *
@@ -67,4 +32,4 @@ while True: #El sistema entra en un bucle infinito.
         print("\nGracias por usar el programa\n") #Imprime un mensaje de agradecimiento.
         break #Termina el bucle.
     else: #Si la opción no es ninguna de las anteriores, realiza lo siguiente:
-        print("Opción incorrecta") #Imprime un mensaje de error.
+        print("Opción incorrecta") #Imprime un mensaje de error.S
