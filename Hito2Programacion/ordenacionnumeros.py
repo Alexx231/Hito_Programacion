@@ -1,20 +1,43 @@
+""" 
+El sistema importa el módulo random para poder generar números aleatorios.
 
+El sistema define la función generar_vector:
 
-import random
+Inicializa un vector vacío.
+Mientras la longitud del vector sea menor que 10, realiza lo siguiente:
+Genera un número aleatorio entre 1 y 10.
+Si el número no está en el vector, lo agrega al vector.
+Devuelve el vector.
+El sistema define la función listadesordenada:
 
-def generarnumeros():
-    vector = []
-    while len(vector) < 10:
-        numero = random.randint(1, 10)
-        if numero not in vector:
-            vector.append(numero)
-    return vector
+Toma un vector como entrada.
+Intenta hacer lo siguiente:
+Abre un archivo llamado "listadesordenada.txt" en modo de escritura.
+Escribe el vector en el archivo.
+Cierra el archivo.
+Imprime un mensaje indicando que el archivo se creó correctamente.
+Si ocurre un error FileNotFoundError, imprime un mensaje indicando que no se pudo crear el archivo.
+Devuelve el vector.
+"""
 
-def listadesordenada(vector):
+import random #El sistema importa el módulo random para poder generar números aleatorios.
+
+def generarnumeros(): #El sistema define la función generar_vector.
     try:
-        with open("listadesordenada.txt", "w") as archivo:
-                archivo.write(str(vector))
-        print("Archivo creado correctamente")
-    except FileNotFoundError:
-        print("No se ha podido crear el archivo")
-    return vector
+        vector = [] #Inicializa una lista llamada vector vacía.
+        while len(vector) < 10: #Mientras la longitud del vector sea menor que 10, realiza lo siguiente:
+            numero = random.randint(1, 10) #Genera un número aleatorio entre 1 y 10.
+            if numero not in vector: #Si el número no está en el vector, realiza lo siguiente:
+                vector.append(numero) #Agrega el número al vector.
+    except ValueError: #Si ocurre un error ValueError, realiza lo siguiente:
+        print("No se pueden generar los numeros") #Imprime un mensaje de error.
+    return vector #Devuelve el vector.
+
+def listadesordenada(vector): #El sistema define la función listadesordenada con el parámetro vector.
+    try: #Intenta hacer lo siguiente:
+        with open("listadesordenada.txt", "w") as archivo: #Abre un archivo llamado "listadesordenada.txt" en modo de escritura.
+                archivo.write(str(vector)) #Escribe el vector en el archivo.
+        print("Archivo creado correctamente") #Imprime un mensaje indicando que el archivo se creó correctamente.
+    except FileNotFoundError: #Si no puede crear el archivo, realiza lo siguiente:
+        print("No se ha podido crear el archivo") #Imprime un mensaje de error.
+    return vector #Devuelve el vector.
