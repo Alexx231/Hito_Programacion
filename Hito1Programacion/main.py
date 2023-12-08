@@ -1,6 +1,6 @@
-from clientes import *
+from Hito1Programacion.clientes import *
 from articulos import *
-from compras import *
+from Hito1Programacion.compras import *
 
 # La función menu imprime un menú de opciones para el usuario y solicita una opción. 
 # Devuelve la opción seleccionada como un entero.

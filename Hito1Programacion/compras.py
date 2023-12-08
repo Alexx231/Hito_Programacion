@@ -1,4 +1,4 @@
-from clientes import *
+from Hito1Programacion.clientes import *
 from articulos import *
 
 compras = []
